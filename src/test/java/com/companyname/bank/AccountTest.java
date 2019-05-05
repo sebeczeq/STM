@@ -89,8 +89,8 @@ public class AccountTest
     }
 
     @Test
-    public void synch() throws InterruptedException {
-        ExecutorService ex = Executors.newFixedThreadPool(2);
+    public void synTest() throws InterruptedException {
+        ExecutorService ex = Executors.newFixedThreadPool(3);
         Account a = new Account(10);
         Account b = new Account(10);
         CountDownLatch countDownLatch = new CountDownLatch(1);
@@ -101,22 +101,35 @@ public class AccountTest
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            a.transferTo(b, 10);
+            b.transferTo(a, 1);
+
         });
+
         ex.submit(() -> {
-            try {
+           try {
+               countDownLatch.await();
+           } catch  (InterruptedException e) {
+               e.printStackTrace();
+            }
+           b.transferTo(a, 5);
+        });
+
+        ex.submit(() -> {
+        try{
                 countDownLatch.await();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            b.transferTo(a, 1);
-
+            a.transferTo(b, 10);
         });
+
         countDownLatch.countDown();
         ex.awaitTermination(1, TimeUnit.SECONDS);
         ex.shutdown();
 
-        assertEquals(11, (int) a.getBalance());
-        assertEquals(9, (int) b.getBalance());
+
+
+        assertEquals(6, (int) a.getBalance());
+        assertEquals(14, (int) b.getBalance());
     }
 }
