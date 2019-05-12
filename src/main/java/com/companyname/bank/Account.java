@@ -12,7 +12,7 @@ public class Account {
     private final TxnLong lastUpdate;
     private final TxnInteger balance;
 
-    public Account(int balance) {
+    public Account(final int balance) {
         this.lastUpdate = StmUtils.newTxnLong(System.currentTimeMillis());
         this.balance = StmUtils.newTxnInteger(balance);
     }

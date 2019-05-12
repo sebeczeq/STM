@@ -9,3 +9,6 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 .idea
+C++/STM/.vs
+C++/STM/Debug
+C++/STM/STM/Debug

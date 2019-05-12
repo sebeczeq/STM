@@ -132,4 +132,5 @@ public class AccountTest
         assertEquals(6, (int) a.getBalance());
         assertEquals(14, (int) b.getBalance());
     }
+
 }
