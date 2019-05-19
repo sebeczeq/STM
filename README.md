@@ -3,7 +3,7 @@
 Projekt z Organizacji i Architektury Koputerów dotyczący zagadnienia pamięci trnsakcyjnej. 
 
 Link do artykułu naukowego:
-[to be done]
+https://1drv.ms/b/s!AtQuo0NmgGyShG246DsGcSMp9xAi
 
 Instrukcja uruchomienia:
 [to be done]
