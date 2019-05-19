@@ -8,7 +8,9 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
-.idea
+.idea/
 C++/STM/.vs
 C++/STM/Debug
 C++/STM/STM/Debug
+C++/STM/x64
+C++/STM/STM/x64

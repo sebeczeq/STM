@@ -4,12 +4,12 @@
 int f()
 {
 	static int i = 0;
-	//synchronized{ // begin synchronized block
+	synchronized { // begin synchronized block
 		std::cout << i << " -> ";
 		++i;       // each call to f() obtains a unique value of i
 		std::cout << i << '\n';
 		return i; // end synchronized block
-	//}
+	}
 }
 int main()
 {

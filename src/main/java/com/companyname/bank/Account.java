@@ -4,10 +4,6 @@ import org.multiverse.api.StmUtils;
 import org.multiverse.api.references.TxnInteger;
 import org.multiverse.api.references.TxnLong;
 
-/**
- * Hello world!
- *
- */
 public class Account {
     private final TxnLong lastUpdate;
     private final TxnInteger balance;
@@ -43,4 +39,5 @@ public class Account {
             other.adjustBy(amount, date);
         });
     }
+
 }
